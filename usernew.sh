@@ -160,6 +160,12 @@ echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━�
 #echo -e "OpenVPN Config : http://$IP:81/" | tee -a /etc/log-create-user.log
 #echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m" | tee -a /etc/log-create-user.log
 echo -e "Payload WS" | tee -a /etc/log-create-user.log
+echo -e "\033[1;36m THIS IS YOUR INFORMATION!\033[0m"
+echo ""
+echo -ne "YOUR NS (Nameserver): " && cat /etc/slowdns/infons
+echo ""
+echo -ne "YOUR PUBLIC KEY: " && cat /root/server.pub
+echo ""
 echo -e "
 GET / HTTP/1.1[crlf]Host: $domen[crlf]Upgrade: websocket[crlf][crlf]
 " | tee -a /etc/log-create-user.log
